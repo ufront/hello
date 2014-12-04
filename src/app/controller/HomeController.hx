@@ -7,9 +7,7 @@ import ufront.ufadmin.controller.UFAdminHomeController;
 import app.Permissions;
 
 class HomeController extends Controller {
-	
-	static var count = 0;
-	
+
 	@inject
 	public var signupApi:SignupApi;
 	
