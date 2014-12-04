@@ -1,0 +1,8 @@
+{
+	"host":"localhost",
+	"user":"ufhelloworld",
+	"pass":"ufhelloworld",
+	"port":3306,
+	"socket":null,
+	"database":"ufhelloworld"
+}
