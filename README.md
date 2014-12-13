@@ -35,6 +35,9 @@ Contributions welcome!
 	
 	# Run a temporary server (Neko) (or shorter: `ufront s`)
 	ufront server
+	**or**
+	cd www
+	nekotools server -rewrite -p 8000 -h localhost -d ./
 	
 	# Run a temporary server (PHP)
 	php -S localhost:8000

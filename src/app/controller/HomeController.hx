@@ -14,6 +14,16 @@ class HomeController extends Controller {
 	@:route("/ufadmin/*")
 	public var ufAdminController:UFAdminHomeController;
 	
+	/**
+	 * Serve static files in ./public directory.
+	 * In production mode it is preferable to use the server (nginx, apache etc..) to 
+	 * serve static files instead.
+	 */
+	@:route(GET, "/public/*")
+	function getPublicResource(rest:Array<String>) {
+		return new DirectFilePathResult(rest.join('/'));
+	}
+	
 	@:route(GET, "/$name")
 	function homepage( ?name:String="World" ) {
 		ufTrace( 'Hey $name, did you know you can trace straight to the browser console?' );
