@@ -1,12 +1,12 @@
 -cp src
 -cp test/src
 -lib ufront:1.0.0-rc.12
--lib ufront-mail:1.0.0-rc.2
+-lib ufront-mail:1.0.0-rc.4
 -lib erazor:1.0.0-rc.1
 -lib buddy:0.16.0
--lib mockatoo
--lib utest
--lib detox
+-lib mockatoo:3.2.1
+-lib utest:1.3.2
+-lib detox:1.0.0-rc.8
 -main TestAll
 # Mockatoo can't handle inline methods.
 --no-inline
