@@ -23,11 +23,12 @@ class HomeController extends Controller {
 	@:route(POST, "/subscribe")
 	public function signup( args:{ name:String, email:String } ) {
 		signupApi.registerEmail( args.name, args.email );
-		return new RedirectResult( '/thank/${args.name}' );
+		var name = (args.name!=""&&args.name!=null) ? args.name : "World";
+		return new RedirectResult( '/thank/$name' );
 	}
 	
 	@:route(GET, "/thank/$name")
-	public function thankyou( ?name:String="World" ) {
+	public function thankyou( name:String ) {
 		return new ViewResult({ title: 'Thanks $name!' });
 	}
 	
