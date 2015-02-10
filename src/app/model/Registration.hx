@@ -8,6 +8,6 @@ class Registration extends Object {
 	
 	public var name:Null<SString<50>>;
 	
-	@:validate( _.length>3 && _.indexOf('@')>0 )
+	@:validate( _.length>3 && _.indexOf('@')>0, "Please enter a valid email" )
 	public var email:SString<255>;
 }

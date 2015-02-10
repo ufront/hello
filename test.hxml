@@ -1,0 +1,23 @@
+-cp src
+-cp test/src
+-lib ufront:1.0.0-rc.12
+-lib ufront-mail:1.0.0-rc.2
+-lib erazor:1.0.0-rc.1
+-lib buddy:0.16.0
+-lib mockatoo
+-lib utest
+-lib detox
+-main TestAll
+# Mockatoo can't handle inline methods.
+--no-inline
+-D server
+
+--each
+
+-neko test/bin/test.n
+
+--next
+
+-php test/bin/
+--php-lib php
+--php-front test.php
