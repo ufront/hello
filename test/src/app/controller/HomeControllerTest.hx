@@ -27,12 +27,12 @@ class HomeControllerTest extends BuddySuite {
 	public function new() {
 
 		var ufApp = new UfrontApplication({
-		indexController: HomeController,
-		errorHandlers: [],
-		disableBrowserTrace: true,
-		templatingEngines: [ufront.view.TemplatingEngines.erazor],
-		defaultLayout: "layout.html",
-		viewPath: "www/view/"
+			indexController: HomeController,
+			errorHandlers: [],
+			disableBrowserTrace: true,
+			templatingEngines: [ufront.view.TemplatingEngines.erazor],
+			defaultLayout: "layout.html",
+			viewPath: "www/view/"
 		});
 		ufApp.inject( UFMailer, TestMailer );
 		ufApp.inject( SignupApi, new MockSignupApi() );
