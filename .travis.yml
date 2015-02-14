@@ -12,3 +12,5 @@ before_script:
 script:
   - yes | haxelib install all
   - haxelib run ufront b
+  - neko test/bin/test.n
+  # Can't run PHP tests until we fix Buddy supports async PHP tests.
