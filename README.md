@@ -37,7 +37,7 @@ Contributions welcome!
 	ufront server
 	**or**
 	cd www
-	nekotools server -rewrite -p 8000 -h localhost -d ./
+	nekotools server
 	
 	# Run a temporary server (PHP)
 	php -S localhost:2987
