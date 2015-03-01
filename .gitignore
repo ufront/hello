@@ -3,6 +3,7 @@ www/index.n
 www/tasks.n
 www/index.php
 www/php/
+test/bin/
 
 # Other stuff
 linkedprojects

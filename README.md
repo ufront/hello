@@ -1,4 +1,4 @@
-# A "Hello World" for Ufront
+# A "Hello World" for Ufront [![Build Status](https://travis-ci.org/npretto/hello.svg?branch=master)](https://travis-ci.org/npretto/hello)
 
 A simple example of ufront.
 
@@ -40,7 +40,7 @@ Contributions welcome!
 	nekotools server -rewrite -p 8000 -h localhost -d ./
 	
 	# Run a temporary server (PHP)
-	php -S localhost:8000
+	php -S localhost:2987
 
 ### Things to look out for
 
@@ -74,12 +74,12 @@ In the code:
 
 When visiting the site:
 
-- `http://localhost:8000/` - the default argument we use.
-- `http://localhost:8000/Jason` - specifying our own argument.
-- `http://localhost:8000/ufadmin` - log in to the admin panel!  If you haven't set up an admin account, anyone will be able to access this.  If you set one up (using `ufront t --create-admin-user`) then it will be limited to only you being able to log in.
-- `http://localhost:8000/ufadmin/db` - this only works in Neko, but lets you sync changes in your models to the database. It's pretty clever, and will suffice until we have a full migration system.  It also adds unique indexes and constraints that `TableCreate.create()` misses.
-- `http://localhost:8000/ufadmin/dbmailer` - look at the emails that have been sent out
-- `http://localhost:8000/ufadmin/easyauth` - view users, change their passwords, and login as them.  More features coming soon!
+- `http://localhost:2987/` - the default argument we use.
+- `http://localhost:2987/Jason` - specifying our own argument.
+- `http://localhost:2987/ufadmin` - log in to the admin panel!  If you haven't set up an admin account, anyone will be able to access this.  If you set one up (using `ufront t --create-admin-user`) then it will be limited to only you being able to log in.
+- `http://localhost:2987/ufadmin/db` - this only works in Neko, but lets you sync changes in your models to the database. It's pretty clever, and will suffice until we have a full migration system.  It also adds unique indexes and constraints that `TableCreate.create()` misses.
+- `http://localhost:2987/ufadmin/dbmailer` - look at the emails that have been sent out
+- `http://localhost:2987/ufadmin/easyauth` - view users, change their passwords, and login as them.  More features coming soon!
 
 ### Support and Contributions
 

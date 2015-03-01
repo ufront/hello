@@ -1,0 +1,16 @@
+language: php
+
+before_script:
+  - sudo apt-get update
+  - sudo apt-get install python-software-properties -y # for the next command
+  - sudo add-apt-repository ppa:eyecreate/haxe -y
+  - sudo apt-get update
+  - sudo apt-get install haxe -y
+  - mkdir ~/haxelib
+  - haxelib setup ~/haxelib
+
+script:
+  - yes | haxelib install all
+  - haxelib run ufront b
+  - neko test/bin/test.n
+  # Can't run PHP tests until we fix Buddy supports async PHP tests.
