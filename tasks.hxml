@@ -1,4 +1,4 @@
--cp src
+-cp src/server
 -lib ufront:1.0.0-rc.13
 -lib ufront-mail:1.0.0-rc.4
 -lib erazor:1.0.0-rc.1

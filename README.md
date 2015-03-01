@@ -35,6 +35,9 @@ Contributions welcome!
 	
 	# Run a temporary server (Neko) (or shorter: `ufront s`)
 	ufront server
+	**or**
+	cd www
+	nekotools server
 	
 	# Run a temporary server (PHP)
 	php -S localhost:2987
