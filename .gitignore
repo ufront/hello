@@ -3,7 +3,10 @@ www/index.n
 www/tasks.n
 www/index.php
 www/php/
+www/js/
 test/bin/
+doc/js
 
 # Other stuff
 linkedprojects
+.haxelib
