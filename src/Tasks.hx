@@ -24,7 +24,7 @@ class Tasks extends UFTaskSet
 				var tasks = new Tasks();
 
 				// Inject our content directory in case we need to write to it.
-				tasks.inject( String, "uf-content/", "contentDirectory" );
+				tasks.inject( String, "../uf-content/", "contentDirectory" );
 
 				// Inject our mailer, which sends SMTP and saves a copy of emails to the DB also.
 				var smtpMailer = null; //new SMTPMailer( Config.smtp );
