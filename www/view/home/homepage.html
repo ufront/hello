@@ -3,11 +3,12 @@
 	<h3>Welcome to our website!</h3>
 	<div class="btn-toolbar">
 		<a href="/Jason" rel="pushstate" class="btn btn-default">Jason</a>
+			<a href="/Jåş°ņ" rel="pushstate" class="btn btn-default">Jåş°ņ</a>
 		<a href="/Clare" rel="pushstate" class="btn btn-default">Clare</a>
-		<a href="/Aaron" rel="pushstate" class="btn btn-default">Aaron</a>
+		<a href="/Aaron" class="btn btn-default pushstate">Aaron</a><!-- You can also use a class="pushstate" instead of rel="pushstate" -->
 	</div>
 	<hr />
-	<form action="/subscribe" method="POST">
+	<form action="/subscribe" method="POST" class="pushstate">
 		<div class="form-inline" role="form">
 			<div class="form-group">
 				<label class="sr-only" for="name">Your name</label>
@@ -20,4 +21,5 @@
 			<button type="submit" class="btn btn-primary">Subscribe for Updates</button>
 		</div>
 	</form>
+	<p class="small"><a href="/subscribers/list.html" class="pushstate">View Subscriber List</a></p>
 </div>

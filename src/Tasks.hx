@@ -10,6 +10,7 @@ import sys.db.*;
 import Config;
 import tasks.*;
 using tink.CoreApi;
+using ufront.core.InjectionTools;
 
 class Tasks extends UFTaskSet
 {
@@ -24,20 +25,20 @@ class Tasks extends UFTaskSet
 				var tasks = new Tasks();
 
 				// Inject our content directory in case we need to write to it.
-				tasks.inject( String, "uf-content/", "contentDirectory" );
+				tasks.injector.injectValue( String, "uf-content/", "contentDirectory" );
 
 				// Inject our mailer, which sends SMTP and saves a copy of emails to the DB also.
 				var smtpMailer = null; //new SMTPMailer( Config.smtp );
 				var dbMailer = new DBMailer( smtpMailer );
-				tasks.inject( UFMailer, dbMailer );
+				tasks.injector.injectValue( UFMailer, dbMailer );
 
 				// Inject our auth system. EasyAuthAdminMode is useful for CLI tools because it lets you do anything.
 				var auth = new EasyAuth.EasyAuthAdminMode();
-				tasks.inject( UFAuthHandler, auth );
-				tasks.inject( EasyAuth, auth );
-				
+				tasks.injector.injectValue( UFAuthHandler, auth );
+				tasks.injector.injectValue( EasyAuth, auth );
+
 				// Inject all our APIs.
-				for ( api in CompileTime.getAllClasses(UFApi) ) tasks.inject( api );
+				for ( api in CompileTime.getAllClasses(UFApi) ) tasks.injector.injectClass( api );
 
 				// Use CLI logging, which prints both to a log file and to the CLI output.
 				tasks.useCLILogging("logs/helloworld.log");

@@ -21,7 +21,6 @@ import ufront.test.TestUtils.NaturalLanguageTests.*;
 import utest.Assert;
 using buddy.Should;
 using ufront.test.TestUtils;
-using mockatoo.Mockatoo;
 
 class HomeControllerTest extends BuddySuite {
 	public function new() {
@@ -34,9 +33,9 @@ class HomeControllerTest extends BuddySuite {
 			defaultLayout: "layout.html",
 			viewPath: "www/view/"
 		});
-		ufApp.inject( UFMailer, TestMailer );
-		ufApp.inject( SignupApi, new MockSignupApi() );
-		ufApp.inject( EasyAuth, new EasyAuthAdminMode() );
+		ufApp.injectClass( UFMailer, TestMailer );
+		ufApp.injectValue( SignupApi, new MockSignupApi() );
+		ufApp.injectValue( EasyAuth, new EasyAuthAdminMode() );
 
 		describe("When visiting the homepage", {
 
@@ -68,7 +67,7 @@ class HomeControllerTest extends BuddySuite {
 			it("should use the API to process their subscription and return a redirect", function (done) {
 				var mockApi = new MockSignupApi();
 				whenIVisit( "/subscribe", "POST", [ "name"=>"Jason", "email"=>"jjjj@ufront.net"] )
-					.andInject( SignupApi, mockApi )
+					.andInjectAValue( SignupApi, mockApi )
 					.onTheApp( ufApp )
 					.itShouldLoad( HomeController, "signup" )
 					.itShouldReturn( RedirectResult, function(result) {
@@ -114,7 +113,7 @@ class HomeControllerTest extends BuddySuite {
 					""=>"aaaa@ufront.net",
 				];
 				whenIVisit( "/subscribers/list.csv" )
-					.andInject( SignupApi, mockApi )
+					.andInjectAValue( SignupApi, mockApi )
 					.onTheApp( ufApp )
 					.itShouldLoad( HomeController, "listSubscribers", [] )
 					.itShouldReturn( ContentResult, function(result) {
@@ -129,7 +128,7 @@ class HomeControllerTest extends BuddySuite {
 			it("should still work if we have zero users", function(done) {
 				var mockApi = new MockSignupApi();
 				whenIVisit( "/subscribers/list.csv" )
-					.andInject( SignupApi, mockApi )
+					.andInjectAValue( SignupApi, mockApi )
 					.onTheApp( ufApp )
 					.itShouldLoad( HomeController, "listSubscribers", [] )
 					.itShouldReturn( ContentResult, function(result) {

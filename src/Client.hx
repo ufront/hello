@@ -1,5 +1,7 @@
 import ufront.app.ClientJsApplication;
 import ufront.view.TemplatingEngines;
+import ufront.remoting.HttpAsyncConnection;
+import ufront.remoting.HttpConnection;
 import app.controller.*;
 
 class Client {
