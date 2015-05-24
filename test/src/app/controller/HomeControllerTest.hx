@@ -42,7 +42,7 @@ class HomeControllerTest extends BuddySuite {
 			it("should say Hello World", function(done) {
 				whenIVisit( "/" )
 					.onTheApp( ufApp )
-					.itShouldLoad( HomeController, "homepage", ["World"] )
+					.itShouldLoad( HomeController, "homepage", [] )
 					.itShouldReturn( ViewResult, function (result) {
 						var title:String = result.data['title'];
 						title.should.be("Hello World");
@@ -115,7 +115,7 @@ class HomeControllerTest extends BuddySuite {
 				whenIVisit( "/subscribers/list.csv" )
 					.andInjectAValue( SignupApi, mockApi )
 					.onTheApp( ufApp )
-					.itShouldLoad( HomeController, "listSubscribers", [] )
+					.itShouldLoad( HomeController, "showSubscribersCSV", [] )
 					.itShouldReturn( ContentResult, function(result) {
 						result.contentType.should.be( "text/csv" );
 						var lines = result.content.split("\n");
@@ -130,7 +130,7 @@ class HomeControllerTest extends BuddySuite {
 				whenIVisit( "/subscribers/list.csv" )
 					.andInjectAValue( SignupApi, mockApi )
 					.onTheApp( ufApp )
-					.itShouldLoad( HomeController, "listSubscribers", [] )
+					.itShouldLoad( HomeController, "showSubscribersCSV", [] )
 					.itShouldReturn( ContentResult, function(result) {
 						result.content.length.should.be( 0 );
 					})
@@ -160,10 +160,11 @@ class HomeControllerTest extends BuddySuite {
 class MockSignupApi extends SignupApi {
 	public var entries:Map<String,String> = new Map();
 
-	public function registerEmail( name:String, email:String ):Void {
+	public function registerEmail( name:String, email:String ):Int {
 		if ( name==null )
 			name = "";
 		entries[name] = email;
+		return 0;
 	}
 
 	public function listSignups():Map<String,String> {
