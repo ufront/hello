@@ -1,16 +1,12 @@
-language: php
-
+language: haxe
+haxe:
+  - "3.2.0"
+  - development
+hxml:
+  - server.hxml
+  - client.hxml
+before_install:
+  - sudo apt-get install neko
 before_script:
-  - sudo apt-get update
-  - sudo apt-get install python-software-properties -y # for the next command
-  - sudo add-apt-repository ppa:eyecreate/haxe -y
-  - sudo apt-get update
-  - sudo apt-get install haxe -y
-  - mkdir ~/haxelib
-  - haxelib setup ~/haxelib
-
 script:
-  - yes | haxelib install all
-  - haxelib run ufront b
-  - neko test/bin/test.n
-  # Can't run PHP tests until we fix Buddy supports async PHP tests.
+  # For now, just compiling the example is all we test.  In Future I might add some unit testing too.
