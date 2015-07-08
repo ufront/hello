@@ -1,13 +1,6 @@
 # Generated files
 www/index.n
-www/tasks.n
 www/index.php
 www/php/
-www/js/
-test/bin/
-doc/js
-uf-content/
-
-# Other stuff
-linkedprojects
-.haxelib
+www/client.js
+www/client.js.map

@@ -1,17 +1,13 @@
--cp src
 -lib ufront
--lib ufront-mail:1.0.0-rc.4
--lib erazor:1.0.0-rc.1
--main Server
--D server
+-main HelloWorld
+
+# Compile the example for both PHP and neko.
 
 --each
 
 -neko www/index.n
--xml doc/neko/neko.xml
 
 --next
 
 -php www/
 --php-lib php
--xml doc/php/php.xml
