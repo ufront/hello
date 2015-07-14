@@ -10,8 +10,11 @@ matrix:
 install:
   - yes | haxelib install ufront # For installing all the dependencies that aren't in the submodules.
   - yes | haxelib install ufront-client # For installing all the dependencies that aren't in the submodules.
-  - git clone --recursive https://github.com/ufront/ufront.git && cd ufront && ./setupDev
+  - git clone --recursive https://github.com/ufront/ufront.git && cd ufront && ./setupDev && cd -
   - haxelib list
+hxml:
+  - server.hxml
+  - client.hxml
 script:
   - haxe server.hxml
   - haxe client.hxml
