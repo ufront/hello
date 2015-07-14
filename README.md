@@ -18,34 +18,47 @@ We'll try make the example viewable online soon.
 
 ### Installation
 
-	# Clone the repo
-	git clone https://github.com/ufront/hello.git
-	cd hello
+Currently you need to use the development version of haxelib, so these instructions are a little longer than normal.
+This will be simplified when we release a new haxelib version.
 
-	# Install all the required ufront libraries
-	haxelib install all
+
+	# Install the Ufront libraries and dependencies
+	haxelib install ufront
+	haxelib install ufront-client
+
+	# Clone and set up the development version of Ufront
+	git clone --recursive https://github.com/ufront/ufront.git
+	cd ufront
+	./setupDev
 
 	# Setup ufront shortcut
 	haxelib run ufront --setup
 
 	# Build both "server.hxml" and "client.hxml"
-	ufront build    # Or shorter, `ufront b`
+	cd submodules/hello
+	ufront build            # Or shorter, `ufront b`
 
 	# To test neko, run a temporary server:
-	ufront server    # Or shorter, `ufront s`
+	ufront server           # Or shorter, `ufront s`
 
 	# Run a temporary server (PHP)
 	cd www
 	php -S localhost:2987
 
+	# To run the NodeJS server:
+	cd www
+	node server.js
+
 ### Support
 
 This has been tested and works server side with:
 
-* PHP
-* Neko
-
-And client side with JS.
+* Server-side:
+	* PHP
+	* Neko
+	* JS (Node)
+* Client-side:
+	* JS (Browser)
 
 All testing is done with Haxe 3.2.
 

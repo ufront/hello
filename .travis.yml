@@ -2,11 +2,17 @@ language: haxe
 haxe:
   - "3.2.0"
   - development
+neko: "2.0.0"
+matrix:
+  allow_failures:
+    - haxe: development # Allow development to fail until I have time to investigate.
+install:
+  - yes | haxelib install ufront # For installing all the dependencies that aren't in the submodules.
+  - yes | haxelib install ufront-client # For installing all the dependencies that aren't in the submodules.
+  - git clone --recursive https://github.com/ufront/ufront.git && cd ufront && ./setupDev
+  - haxelib list
 hxml:
   - server.hxml
   - client.hxml
-before_install:
-  - sudo apt-get install neko
-before_script:
 script:
   # For now, just compiling the example is all we test.  In Future I might add some unit testing too.
