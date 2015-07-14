@@ -1,3 +1,4 @@
+sudo: false
 language: haxe
 haxe:
   - "3.2.0"
@@ -11,8 +12,7 @@ install:
   - yes | haxelib install ufront-client # For installing all the dependencies that aren't in the submodules.
   - git clone --recursive https://github.com/ufront/ufront.git && cd ufront && ./setupDev
   - haxelib list
-hxml:
-  - server.hxml
-  - client.hxml
 script:
+  - haxe server.hxml
+  - haxe client.hxml
   # For now, just compiling the example is all we test.  In Future I might add some unit testing too.
