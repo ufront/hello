@@ -1,0 +1,19 @@
+{
+  "name": "ufront-hello",
+  "version": "0.0.1",
+  "description": "A Hello-World example for Ufront on NodeJS built on top of Express",
+  "main": "www/server.js",
+  "scripts": {
+    "test": "www/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ufront/hello"
+  },
+  "author": "Jason O'Neil <jason.oneil@gmail.com>",
+  "license": "Public",
+  "dependencies": {
+    "body-parser": "^1.13.1",
+    "express": "^4.12.2"
+  }
+}

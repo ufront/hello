@@ -12,7 +12,11 @@ class HelloWorld {
 				indexController: HelloWorldController,
 				defaultLayout: "layout.html"
 			});
-			ufApp.executeRequest();
+			#if (php || neko)
+				ufApp.executeRequest();
+			#elseif nodejs
+				ufApp.listen();
+			#end
 		#elseif client
 			// Initialise the app on the client and respond to "pushstate" requests as a single-page-app.
 			var clientApp = new ClientJsApplication({

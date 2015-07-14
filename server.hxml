@@ -11,3 +11,10 @@
 
 -php www/
 --php-lib php
+
+--next
+
+-lib hxnodejs
+-lib express
+--macro allowPackage("sys")
+-js www/server.js
