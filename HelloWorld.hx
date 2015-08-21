@@ -47,6 +47,7 @@ class HelloWorldController extends Controller {
 	@:route(POST,"/signup/newname/")
 	public function submitNewName( args:{name:String} ):ActionResult {
 		if ( args.name.length>0 ) {
+			ufLog('Custom name ${args.name} entered');
 			return new RedirectResult( '/${args.name}/' );
 		}
 		else {
