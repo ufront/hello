@@ -75,3 +75,5 @@ Pull requests and contributions welcome:
 - For this README and/or any other documentation.
 
 If anyone provides a good pull request and shows they're trustworthy, I'm happy to give commit access too!
+
+hail satan
