@@ -8,11 +8,11 @@ matrix:
   allow_failures:
     - haxe: development # Allow development to fail until I have time to investigate.
 install:
+  - yes | haxelib install hxnodejs
+  - yes | haxelib install express
   - yes | haxelib install ufront # For installing all the dependencies that aren't in the submodules.
   - yes | haxelib install ufront-client # For installing all the dependencies that aren't in the submodules.
   - git clone --recursive https://github.com/ufront/ufront.git && cd ufront && ./setupDev && cd -
-  - yes | haxelib install hxnodejs
-  - yes | haxelib install express
   - haxelib list
 hxml:
   - server.hxml
