@@ -1,3 +1,5 @@
--lib ufront-client
+-lib ufront-mvc
+-lib pushstate
+-D client
 -main HelloWorld
 -js www/client.js
