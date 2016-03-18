@@ -10,7 +10,7 @@ This example is intentionally small, it shows off:
 - Using a controller to respond to link clicks and form submits.
 - Returning a ViewResult using the built in `haxe.Template` templating system.
 
-There's obviously a lot more to Ufront, but this is supposed to be a very simple example.
+There's obviously a lot more to Ufront, but this is supposed to be a very simple example. For more comprehensive guides, you can visit the [ufront-nodejs-guide](https://github.com/kevinresol/ufront-nodejs-guide/)
 
 ### Viewing it online
 
