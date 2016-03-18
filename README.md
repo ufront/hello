@@ -1,4 +1,4 @@
-# A "Hello World" for Ufront [![Build Status](https://travis-ci.org/npretto/hello.svg?branch=master)](https://travis-ci.org/npretto/hello)
+# A "Hello World" for Ufront [![Build Status](https://travis-ci.org/ufront/hello.svg?branch=master)](https://travis-ci.org/ufront/hello)
 
 A simple example of Ufront running on the client and the server.
 
