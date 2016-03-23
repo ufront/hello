@@ -1,4 +1,5 @@
--lib ufront
+-lib ufront-mvc
+-D server
 -main HelloWorld
 
 # Compile the example for both PHP and neko.
