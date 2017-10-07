@@ -1,10 +1,10 @@
-# A "Hello World" for Ufront [![Build Status](https://travis-ci.org/ufront/hello.svg?branch=master)](https://travis-ci.org/ufront/hello)
+# A Clean, Blazing-Fast "Hello World" for Ufront [![Build Status](https://travis-ci.org/ufront/hello.svg?branch=master)](https://travis-ci.org/ufront/hello)
 
 A simple example of Ufront running on the client and the server.
 
-For help understanding the example, you can ask our community on one of our [community channels](http://ufront.net/community/) like [gitter](http://gitter.im/ufront/ufront).
+If you are unable to understand the example, please feel free to ask our community on one of our [community channels](http://ufront.net/community/) like [gitter](http://gitter.im/ufront/ufront).
 
-This example is intentionally small, it shows off:
+Our example is intentionally small. It exists in order to display the process of:
 
 - Setting up an app to run on both the server and the client.
 - Using a controller to respond to link clicks and form submits.
